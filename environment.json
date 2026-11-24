@@ -1,14 +1,8 @@
 {
-  "hardware": "GitHub Actions Ubuntu CPU (2-core) / Google Colab T4 GPU",
-  "runtime": "Python 3.11",
-  "pythonVersion": "3.11",
+  "hardware": "CPU (x86_64)",
+  "runtime": "GitHub Actions (Linux 7.0.0-1020-azure)",
+  "pythonVersion": "3.11.18",
   "datasetSource": "Synthetic reproducible benchmark (fixed seed = 42)",
   "databaseSource": "None (in-memory / DuckDB)",
-  "randomSeed": "42",
-  "packages": [
-    "numpy",
-    "pydantic",
-    "rank-bm25"
-  ],
-  "colabNotebookRef": "https://colab.research.google.com/github/pushkaraj007/lab-deterministic-agentic-query-decomposition-with/blob/main/notebook.ipynb"
+  "randomSeed": "42"
 }

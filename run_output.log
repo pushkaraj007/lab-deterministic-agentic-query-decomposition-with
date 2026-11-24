@@ -16,27 +16,9 @@ collecting ... collected 6 items
 
 tests/test_core.py::test_hop_limit_enforcement PASSED                    [ 16%]
 tests/test_core.py::test_validator_logic PASSED                          [ 33%]
-tests/test_core.py::test_cycle_avoidance_structure FAILED                [ 50%]
+tests/test_core.py::test_cycle_avoidance_structure PASSED                [ 50%]
 tests/test_solution.py::test_metrics_manifest_valid PASSED               [ 66%]
 tests/test_solution.py::test_environment_manifest_valid PASSED           [ 83%]
 tests/test_solution.py::test_notebook_valid_nbformat PASSED              [100%]
 
-=================================== FAILURES ===================================
-________________________ test_cycle_avoidance_structure ________________________
-
-    def test_cycle_avoidance_structure():
-        # Ensures the loop structure is deterministic and terminates at max_hops
-        corpus = [Document(doc_id="1", text="trigger data")]
-        engine = Engine(corpus, max_hops=3)
-        state = engine.run("trigger")
->       assert len(state.raw_memory) > 0
-E       AssertionError: assert 0 > 0
-E        +  where 0 = len([])
-E        +    where [] = AgentState(query='trigger', original_query='trigger', hop_count=3, raw_memory=[], compressed_history='Previously explored: ', is_sufficient=False).raw_memory
-
-tests/test_core.py:34: AssertionError
-=========================== short test summary info ============================
-FAILED tests/test_core.py::test_cycle_avoidance_structure - AssertionError: assert 0 > 0
- +  where 0 = len([])
- +    where [] = AgentState(query='trigger', original_query='trigger', hop_count=3, raw_memory=[], compressed_history='Previously explored: ', is_sufficient=False).raw_memory
-========================= 1 failed, 5 passed in 0.19s ==========================
+============================== 6 passed in 0.17s ===============================
