@@ -25,8 +25,8 @@ tests/test_solution.py::test_notebook_valid_nbformat PASSED              [100%]
 ________________________ test_cycle_avoidance_structure ________________________
 
     def test_cycle_avoidance_structure():
-        # Ensures the loop structure is deterministic
-        corpus = [Document(doc_id="1", text="data")]
+        # Ensures the loop structure is deterministic and terminates at max_hops
+        corpus = [Document(doc_id="1", text="trigger data")]
         engine = Engine(corpus, max_hops=3)
         state = engine.run("trigger")
 >       assert len(state.raw_memory) > 0
@@ -34,9 +34,9 @@ E       AssertionError: assert 0 > 0
 E        +  where 0 = len([])
 E        +    where [] = AgentState(query='trigger', original_query='trigger', hop_count=3, raw_memory=[], compressed_history='Previously explored: ', is_sufficient=False).raw_memory
 
-tests/test_core.py:32: AssertionError
+tests/test_core.py:34: AssertionError
 =========================== short test summary info ============================
 FAILED tests/test_core.py::test_cycle_avoidance_structure - AssertionError: assert 0 > 0
  +  where 0 = len([])
  +    where [] = AgentState(query='trigger', original_query='trigger', hop_count=3, raw_memory=[], compressed_history='Previously explored: ', is_sufficient=False).raw_memory
-========================= 1 failed, 5 passed in 0.12s ==========================
+========================= 1 failed, 5 passed in 0.19s ==========================
