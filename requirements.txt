@@ -1,0 +1,4 @@
+# Auto-collected Python dependencies for deterministic-agentic-query-decomposition-with
+numpy
+pydantic
+rank-bm25
