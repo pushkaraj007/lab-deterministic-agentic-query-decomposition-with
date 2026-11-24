@@ -2,7 +2,44 @@
   "labId": "lab_mwv7zvsn_7bkm",
   "title": "Deterministic Agentic Query Decomposition with Hop-Limit Termination",
   "successMetric": "Multi-hop Recall@10 >= 0.85 with <= 3.0 average hops and 0% infinite loops",
-  "generatedAt": "2026-11-24T21:43:38.263Z",
-  "metrics": [],
+  "generatedAt": "2026-11-24T21:44:58.718348+00:00",
+  "metrics": [
+    {
+      "key": "success",
+      "value": true,
+      "unit": "",
+      "baseline": null,
+      "delta": "",
+      "source": "actions",
+      "capturedAt": "2026-11-24T21:44:58.718348+00:00"
+    },
+    {
+      "key": "hops_taken",
+      "value": 1,
+      "unit": "",
+      "baseline": null,
+      "delta": "",
+      "source": "actions",
+      "capturedAt": "2026-11-24T21:44:58.718348+00:00"
+    },
+    {
+      "key": "raw_memory_size",
+      "value": 3,
+      "unit": "",
+      "baseline": null,
+      "delta": "",
+      "source": "actions",
+      "capturedAt": "2026-11-24T21:44:58.718348+00:00"
+    },
+    {
+      "key": "recall_met",
+      "value": true,
+      "unit": "",
+      "baseline": null,
+      "delta": "",
+      "source": "actions",
+      "capturedAt": "2026-11-24T21:44:58.718348+00:00"
+    }
+  ],
   "takeaways": []
 }
