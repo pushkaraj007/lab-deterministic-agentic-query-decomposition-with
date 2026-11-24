@@ -1,4 +1,10 @@
 import pytest
+import sys
+import os
+
+# Ensure src is in the path for CI execution
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
+
 from src.models import Document
 from src.engine import Engine
 
