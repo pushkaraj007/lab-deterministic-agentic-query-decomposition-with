@@ -19,9 +19,16 @@ class MockRetriever:
         tokenized_query = _tokenize(query)
         if not tokenized_query:
             return []
+        
+        # Get raw scores from BM25
         doc_scores = self.bm25.get_scores(tokenized_query)
+        
+        # We sort by scores descending and take top_k.
+        # We remove the score > 0 filter because on very small/single-doc corpora,
+        # BM25 can return negative or zero scores for valid matches.
         top_indices = np.argsort(doc_scores)[::-1][:top_k]
-        return [self.corpus[i] for i in top_indices if doc_scores[i] > 0]
+        
+        return [self.corpus[i] for i in top_indices]
 
 
 class Engine:
